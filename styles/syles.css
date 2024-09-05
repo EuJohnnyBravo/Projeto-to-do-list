@@ -1,0 +1,42 @@
+:root {
+  --background: #0f172a;
+  --background-border: #334155;
+  --texto-busca: #64748b;
+}
+
+body {
+  background-color: var(--background);
+  border: 2px solid var(--background-border);
+  border-radius: 4px;
+  height: 100vh;
+  font-family: "Inter";
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem;
+}
+
+.procura {
+  padding: 1rem;
+  border: none;
+  font-size: 24px;
+  font-weight: 600;
+  width: 98%;
+  color: var(--texto-busca);
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.linha {
+  width: 100%;
+  height: 1px;
+  background: var(--background-border);
+}
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
