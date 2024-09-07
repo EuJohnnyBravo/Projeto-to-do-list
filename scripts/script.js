@@ -68,7 +68,7 @@ function novaTarefa(titulo, descricao) {
     titulo: titulo.value,
     descricao: descricao.value,
   };
-  listaDeTarefas.push(tarefa);
+  listaDeTarefas.unshift(tarefa);
 }
 
 function rescreverTarefa() {
@@ -103,9 +103,9 @@ function salvar() {
 
 function cartaoAdicionar() {
   return `
-    <div>
-      <input id="titulo" type="text"></input>
-      <textarea id="descricao"></textarea>
+    <div class="Add-Card">
+      <input id="titulo" placeholder="Insira um titulo"  type="text"></input>
+      <textarea id="descricao" placeholder="coloque a tarefa aqui "></textarea>
       <a href="#" onClick="salvar()">Salvar</a>
     </div>
   `;
@@ -113,11 +113,11 @@ function cartaoAdicionar() {
 
 function cartaoTarefa(tarefa) {
   return `
-    <div id="${tarefa.id}">
-      <h2>${tarefa.titulo}</h2>
+    <div id="${tarefa.id}" class="card">
+      <h1 style="">${tarefa.titulo}</h1>
       <p>${tarefa.descricao}</p>
       <div>
-        <a href="#" onClick="apagarTarefa(${tarefa.id})">Excluir</a>
+        <a href="#" class="excluir" onClick="apagarTarefa(${tarefa.id})">Excluir</a>
         <a href="#" onClick="editarTarefa(${tarefa.id})">Editar</a>
       </div>
     </div>

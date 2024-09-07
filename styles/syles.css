@@ -1,17 +1,41 @@
 :root {
-  --background: #0f172a;
+  --background: #0F172A;
   --background-border: #334155;
   --texto-busca: #64748b;
+  --caminhos: #CBD5E1;
 }
 
-body {
+a{
+  text-decoration: none;
+  color: black;
+  transition: all 0.1s;
+  width: 30%;
+  
+}
+a:hover{
+  transition: all 2s;
+  text-decoration: none;
+  box-shadow: 0 1px 1rem 1px  #0F172A ;
+  color: var(--caminhos);
+  border-radius: 0 2rem 2rem 0;
+}
+header{
+  position:fixed;
+  width: 100%;
   background-color: var(--background);
-  border: 2px solid var(--background-border);
-  border-radius: 4px;
+  margin: 0;
+}
+body {
   height: 100vh;
   font-family: "Inter";
+  background-color: var(--background) ;
+  
 }
-
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: var(--background); /* ou que isso seja adicionado ao "caminho" da barra */
+}
 .principal {
   display: flex;
   flex-direction: column;
@@ -19,7 +43,7 @@ body {
 }
 
 .procura {
-  padding: 1rem;
+  /* padding: 1rem; */
   border: none;
   font-size: 24px;
   font-weight: 600;
@@ -28,6 +52,7 @@ body {
   background: none;
   border: none;
   outline: none;
+  
 }
 
 .linha {
@@ -39,4 +64,30 @@ body {
 .cartoes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.cartoes h1 ,p, a{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card{
+  background-color: var(--background-border);
+  border-radius: 0.5rem;
+   
+}
+
+.card h1{
+  color: var(--caminhos);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.excluir{
+  color: rgba(255, 0, 0, 0.808);
+  
+}
+.excluir:hover{
+  box-shadow: 0 1px     rgba(255, 0, 0, 0.808) ;
 }
