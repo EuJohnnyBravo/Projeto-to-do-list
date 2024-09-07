@@ -29,7 +29,7 @@ const listaDeTarefas = [
   {
     id: 1725552701220,
     titulo: "Assistir ao filme indicado pelo amigo",
-    descricao: "No fim de semana",
+    descricao: "No fim de semana",
   },
 ];
 
@@ -103,10 +103,10 @@ function salvar() {
 
 function cartaoAdicionar() {
   return `
-    <div class="Add-Card">
+    <div class="addCard">
       <input id="titulo" placeholder="Insira um titulo"  type="text"></input>
-      <textarea id="descricao" placeholder="coloque a tarefa aqui "></textarea>
-      <a href="#" onClick="salvar()">Salvar</a>
+      <textarea id="descricao" placeholder="Descrição da tarefa"></textarea>
+      <a href="#" class="botao salvar" onClick="salvar()">Salvar</a>
     </div>
   `;
 }
@@ -114,11 +114,11 @@ function cartaoAdicionar() {
 function cartaoTarefa(tarefa) {
   return `
     <div id="${tarefa.id}" class="card">
-      <h1 style="">${tarefa.titulo}</h1>
-      <p>${tarefa.descricao}</p>
-      <div>
-        <a href="#" class="excluir" onClick="apagarTarefa(${tarefa.id})">Excluir</a>
-        <a href="#" onClick="editarTarefa(${tarefa.id})">Editar</a>
+      <h1>${tarefa.titulo}</h1>
+      <p class="descricao">${tarefa.descricao}</p>
+      <div class="botoes">
+        <a href="#" class="botao" onClick="editarTarefa(${tarefa.id})">Editar</a>
+        <a href="#" class="excluir botao" onClick="apagarTarefa(${tarefa.id})">Excluir</a>
       </div>
     </div>
   `;
