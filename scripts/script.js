@@ -6,31 +6,6 @@ const listaDeTarefas = [
     titulo: "Fazer compras do mercado",
     descricao: "Leite, pão, frutas e verduras",
   },
-  {
-    id: 1725552692258,
-    titulo: "Estudar para a prova de matemática",
-    descricao: "Resolver exercícios do capítulo 5",
-  },
-  { id: 1725552705718, titulo: "Ligar para o médico", descricao: "Agendar consulta de rotina" },
-  { id: 1725552794378, titulo: "Lavar o carro", descricao: "Interior e exterior" },
-  {
-    id: 1725552705651,
-    titulo: "Finalizar o relatório do projeto",
-    descricao: "Adicionar gráficos e conclusão",
-  },
-  { id: 1725552705375, titulo: "Caminhar no parque", descricao: "30 minutos pela manhã" },
-  { id: 1725552705164, titulo: "Pagar as contas", descricao: "Luz, água e cartão de crédito" },
-  {
-    id: 1725552705736,
-    titulo: "Arrumar o guarda-roupa",
-    descricao: "Doar roupas que não uso mais",
-  },
-  { id: 1725552705798, titulo: "Ler o novo livro de ficção científica", descricao: "Capítulo 3" },
-  {
-    id: 1725552701220,
-    titulo: "Assistir ao filme indicado pelo amigo",
-    descricao: "No fim de semana",
-  },
 ];
 
 function pegarParametros() {
@@ -104,7 +79,7 @@ function salvar() {
 function cartaoAdicionar() {
   return `
     <div class="addCard">
-      <input id="titulo" placeholder="Insira um titulo"  type="text"></input>
+      <input id="titulo" placeholder="Tarefa..."  type="text"></input>
       <textarea id="descricao" placeholder="Descrição da tarefa"></textarea>
       <a href="#" class="botao salvar" onClick="salvar()">Salvar</a>
     </div>
