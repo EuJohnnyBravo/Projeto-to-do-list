@@ -1,12 +1,6 @@
 const cartoes = document.getElementById("cartoes");
 const hidden = document.getElementById("id");
-const listaDeTarefas = [
-  {
-    id: 1725552678126,
-    titulo: "Fazer compras do mercado",
-    descricao: "Leite, pão, frutas e verduras",
-  },
-];
+const listaDeTarefas = [];
 
 function pegarParametros() {
   return {
