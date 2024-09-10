@@ -1,6 +1,15 @@
 const cartoes = document.getElementById("cartoes");
 const hidden = document.getElementById("id");
-const listaDeTarefas = [];
+const chave = "chave";
+const listaDeTarefas = getLocalStorage() ? getLocalStorage() : [];
+
+function getLocalStorage() {
+  return JSON.parse(localStorage.getItem(chave));
+}
+
+function setLocalStorage(tarefas) {
+  localStorage.setItem(chave, JSON.stringify(tarefas));
+}
 
 function pegarParametros() {
   return {
@@ -19,7 +28,7 @@ function buscaTarefa(id) {
 
 function apagarTarefa(id) {
   listaDeTarefas.splice(buscaIndex(id), 1);
-
+  setLocalStorage(listaDeTarefas);
   mostrarCartoes(listaDeTarefas);
 }
 
@@ -38,12 +47,14 @@ function novaTarefa(titulo, descricao) {
     descricao: descricao.value,
   };
   listaDeTarefas.unshift(tarefa);
+  setLocalStorage(listaDeTarefas);
 }
 
 function rescreverTarefa() {
   const editarTarefa = buscaTarefa(Number(hidden.value));
   editarTarefa.titulo = titulo.value;
   editarTarefa.descricao = descricao.value;
+  setLocalStorage(listaDeTarefas);
 }
 
 function verificaValores(titulo) {
@@ -109,7 +120,5 @@ filtrar.addEventListener("input", (e) => {
   );
   mostrarCartoes(novaLista);
 });
-
-function filtrarTarefas(e) {}
 
 mostrarCartoes(listaDeTarefas);
